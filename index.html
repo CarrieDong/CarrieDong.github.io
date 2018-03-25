@@ -148,7 +148,22 @@
     <!-- Main Content -->
     <!-- Page Header -->
 <!-- Set your background image for this header in the theme's configuration: index_cover -->
-<header class="intro-header" style="background-image: url('/img/home.png')">
+<header class="intro-header" >
+    <meta charset="UTF-8">
+    <title>vegas-demo</title>
+//引入vegas.css
+    <link rel="stylesheet" href="../../Vegas-Background-SlideShow-plugin(background%20carousel)/vegas.min.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #demo{
+            width: 100%;
+            height: 480px;
+        }
+    </style>
+    
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -163,6 +178,25 @@
 </header>
 
 <!-- Main Content -->
+<div id="demo"></div>
+//基于jQuery，需要引入jQuery，之后引入vegas.js，注意顺序
+<script src="../../jq/jquery-3.2.1.min.js"></script>
+<script src="../../Vegas-Background-SlideShow-plugin(background%20carousel)/vegas.js"></script>
+<script>
+    $(function(){
+//调用vegas方法，其中slides是要显示的背景图片，src指示地址。
+        $("#demo").vegas({
+            slides:[
+                { src : '/img/home.png' },
+                { src : '/img/travel.jpg' },
+                { src : '/img/studio.jpg' }
+            ],
+//vagas有两种过渡方式，一种是transition，另一种是animation，另种方式各有很多的过渡效果。slideLeft2是transition中的一种
+            transition : 'slideLeft'
+        });
+    })
+</script>
+
 <div class="container">
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
