@@ -20,7 +20,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Mysql学习感悟"/>
+        <meta property="og:title" content="Mysql学习感悟-1"/>
     
 
     <!--Open Graph Description-->
@@ -44,7 +44,7 @@
 
     <!-- Title -->
     
-    <title>Mysql学习感悟 - This is Carrie</title>
+    <title>Mysql学习感悟-1 - This is Carrie</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -154,7 +154,7 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
-                    <h1>Mysql学习感悟</h1>
+                    <h1>Mysql学习感悟-1</h1>
                     
                     <h2 class="post-subheading">
                         挖的坑跪着也得填
@@ -208,8 +208,10 @@
                 <h3 id="04-04-2018"><a href="#04-04-2018" class="headerlink" title="04/04/2018"></a>04/04/2018</h3><p>今天米兰雨，一上午心情很糟糕。<br>去尼斯玩的时候钱包被偷了，上午继续去银行询问上报的事情，还跑去补居留重复交了申居留的70欧，还要担心小组作业和11号的理论课考试。。。心力交瘁</p>
 <p>但是现在很兴奋啊！上次安装了mysql之后就怎么也没法正常使用，问题有输入密码不正确+无命令，尝试了管理员权限重新设置密码，可是打开权限之后在第二个终端窗口操作就反应无命令。有人解释是安装地址和查询地址不符，映射到正确地址后尝试还是不正确。而且期间我也胡乱改了一些设置，最后索性卸载重装！事实上卸载到一半，又出现了无命令的现象，庆幸已经删掉了大部分的内容。<br>当我重新安装了一遍时也重新推送了缺省密码，这次重新来过的过程异常顺利。只是不晓得怎么回事，我登录必须用<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ mysql -u root -p </span><br><span class="line">$ alter user<span class="string">'root'</span>@<span class="string">'localhost'</span>;</span><br></pre></td></tr></table></figure></p>
 <p>直接输入 mysql -u root无效…</p>
-<p>Point 1: 报错42000即表示语句中有错误，常见的有单引号与反引号/空格/多加符号<br>Point 2: mysql不分大小写，但是为了区分定义过的和变量名，通常把保留字大写，其他小写</p>
-<p>希望一切顺利下去！</p>
+<p>Point 1: 报错42000即表示语句中有错误，常见的有单引号与反引号/空格/多加符号<br>Point 2: mysql不分大小写，但是为了区分定义过的和变量名，通常把保留字大写，其他小写<br>Point 3; 看着符号排成的表格，竟然觉得有些可爱，但是到底需不需要用workbench呢<br>Point 4: ENUM和SET真是神奇的数据类型存在</p>
+<p>知道如何输入数据之后，我有了一个问题 怎么改数据呢<br>下面是我的尝试：重复输入，但是很显然我高估了它，，，它并不会自己匹配覆盖相似数据<br><img src="question1.png" alt=""></p>
+<p>查了之后才知道还有update这个修改，以及如何删除<br>但是我想先修改后删除，所以现在变成了这个情况，我只能愣在屏幕前。。。<br><img src="question2.png" alt=""></p>
+<p>而我删除id3重新输入后，表格内容并不会按id排序，不过也是，id对傻傻的sql来说只是一个内容，并不是序号啊，还好，这些我遇到的问题会在后面几节课学习</p>
 
 
                 
