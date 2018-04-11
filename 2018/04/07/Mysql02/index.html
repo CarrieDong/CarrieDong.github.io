@@ -201,7 +201,12 @@
 
             <!-- Post Main Content -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <p>子查询！</p>
+                <p>sql学习计划搁置了几天，因为今天有一场理论考试-digital management，自己吓唬了自己一场。<br>说实话，米理管理对digital这方面的授课不够专业，也怨不得米理，欧洲整体情况使然。比如这个时代了，老师还专门讲了一大章mobile的东西，牵涉到EDI，MNO,OTT等我觉得很遥远的名词，因为我们这代人已经把它们当成理所当然了。而Blockchain虽然定义为趋势的一种，但实际上只有潦潦一页而已。而且mobility仍然被化为趋势之一，没有被删掉。（我不太理解为什么现在还保留，不是已经被玩烂了吗。）<br>不过个人仍然很感兴趣eSupply Chain的东西。因为商业/制造业，作为今后能继续玩并且当下暂时没有Monopoly模式的行业，最大的发展基础就是eSupplyChain。今天碰巧还考了一下如何帮助traditional company制定digital business strategy，嗯， 这里不敢肯定和eSupplyChain是一回事，毕竟教授没说，但是我隐隐觉得差不多，起码有overlap。</p>
+<h3 id="还是让我们回到sql…"><a href="#还是让我们回到sql…" class="headerlink" title="还是让我们回到sql…"></a>还是让我们回到sql…</h3><p>仍然是在学基础课程，第一个难点是内置函数。<br>会用Max/min之后，我尝试查询最大值所在的条。比如最大工资的员工所在部门，信息在同一表中。<br>于是我写了如下<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ select dpt from table <span class="built_in">where</span> salary=max(salary);</span><br></pre></td></tr></table></figure></p>
+<p>理所当然地返错：‘Invalid use of group function’<br>我原先还想显示工资在avg-Max区间的部门，暂时流产了。。</p>
+<p>第二个难点是子查询。<br>原理很简单，子查询的目的是显示与1表和2表中相同因素a有关系的查询，所以在查询语句中通过对a的定义就可以将A和B连接起来了。我最开始是尝试用IN，比如<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ select count(A) from table1 <span class="built_in">where</span> B IN (select BB from table2 <span class="built_in">where</span> BB=C);</span><br></pre></td></tr></table></figure></p>
+<p>总是会跳出错误‘this is incompatible with sql_mode=only_full_group_by’。。。很折磨人，后来把in换成=就成功了，我不知道为什么，这不是应该一样的吗？</p>
+<p>对这两处出错总结，都涉及到group。</p>
 
 
                 
