@@ -20,7 +20,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="This is Carrie"/>
+        <meta property="og:title" content="Mysql学习感悟-3"/>
     
 
     <!--Open Graph Description-->
@@ -33,7 +33,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
     
 
     <!--Page Cover-->
@@ -44,7 +44,7 @@
 
     <!-- Title -->
     
-    <title>Archiv - This is Carrie</title>
+    <title>Mysql学习感悟-3 - This is Carrie</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -146,168 +146,87 @@
 </nav>
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
-<header class="intro-header" style="background-image: url('/img/home.png')">
+<header class="intro-header" style="background-image: url('/img/mysql.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>Archiv</h1>
+                <div class="post-heading">
+                    <h1>Mysql学习感悟-3</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2018-04-14
+                        
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/sql/">#sql</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                        
+
+<a href="/categories/Notes/">Notes</a>
+
+                    
+                </div>
             
-                <div class="post-preview">
-    <a href="/2018/04/14/Mysql-note3/">
-        <h1 class="post-title archive">
-            Mysql学习感悟-3
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-04-14
-    </p>
-</div>
+
+            <!-- Gallery -->
             
-                <div class="post-preview">
-    <a href="/2018/04/07/Mysql02/">
-        <h1 class="post-title archive">
-            Mysql学习感悟-2
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-04-07
-    </p>
-</div>
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>其实几天前就打算继续写点什么，但是几天前就被“索引”这个概念给绊住了。<br>一开始看的解释就很官方…它的作用相当于书的目录…当表中有大量记录时，若要对表进行查询，没有索引的情况是全表搜索，将所有记录一一取出，和查询条件进行一一对比…</p>
+<p>现在看，作者是高手，已经尽量用形象比较的方式解释概念了，可是直到上一时刻我一直不明白。在我的想象中(有一双滑板鞋…)查找不就是按照给的条件的关键词来对比的吗，这个索引没啥存在感啊，那看来我理解不对，那么索引到底是什么。</p>
+<p>于是继续搜不同教程看解释。其中有个人举了这个例子“假如我们创建了一个 mytable表，随机向里面插入了10000条记录，其中有一条：5555, admin。在查找username=”admin”的记录 SELECT * FROM mytable WHERE username=’admin’;时，如果在username上已经建立了索引，MySQL无须任何扫描，即准确可找到该记录。相反，MySQL会扫描所有记录，即要查询10000条记录。”这里的最后一句话彻底把我搞蒙了：查询10000条记录，那么说明无索引的查询是按一条条查的。而有了索引就算是只查索引所在的那列，还是要一条条地单独查那一列。两种都是一条条查，次数相同，这怎么说明索引能快速搜索呢？</p>
+<p>另外，当我暂时不管概念创建索引后，用select*from table看索引到底什么样时，我发现这个东西没形啊…因为我以为索引应该像目录一样，多加一列而已吧？而用show index后出现的东西看不懂，不知道那么多列代表的是什么…<br><img src="1.png" alt=""></p>
+<p>那就再建一个，对比一下，好像有点看出来index这个结果是什么意思了<br><img src="2.png" alt=""></p>
+<p>用其他表格建索引再对比一下<br><img src="3.png" alt=""></p>
+<p>我很幸运地找到了一篇从算法上解释索引的<a href="http://shanks.leanote.com/post/Mysql%E7%B4%A2%E5%BC%95" target="_blank" rel="noopener">文章</a>，大概明白了这个‘晦涩’的表：Non_unique不懂，Key_name就是键(索引)，PRIMARY是最重要的主键，Seq_in_index是键的优先级，Column_name是表的列名，Collation不懂，Cardinality是不重复的索引值种类，Index_type一般用Btree算法，还有HASH算法(不过对我也无所谓)其他也没什么太重要的了。</p>
+<p>到这里又问了一下我朋友，答曰：“你需要查找姓名叫张三的，就会对姓名这个字段一行一行的进行比较，所以叫全表查询。如果有索引，就相当于有了字典的目录一样，可以很快找到你要查询的数据所在的小范围并且找到它，不需要一行一行比较。”我朋友解释也是很简练。<br>我又琢磨：你说像翻字典，就是说全书粗略地翻一下，在看到大概字母顺序的时候停下来，然后再细翻查找。这里的字母顺序就是主键值，细翻就是正常‘全表查询’咯。</p>
+<p>其中平衡二叉树(朋友给我科普的)特别形象：先通过主键(第一批大节点)确定要查询的是在哪个大方向，再通过组合索引?(下一批节点)继续缩小方向，以此下去。和全表查询比较，确实不用每条都查，虽然到某一阶段后还是要挨个查，但是省了很多很多条肯定没关系的查询。<br><img src="4.png" alt=""></p>
+<p>以上！晚安</p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
             
-                <div class="post-preview">
-    <a href="/2018/04/07/瞎说AI/">
-        <h1 class="post-title archive">
-            关于AI对社会未来影响的思考
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-04-07
-    </p>
-</div>
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
             
-                <div class="post-preview">
-    <a href="/2018/04/06/Gallery/">
-        <h1 class="post-title archive">
-            单独的平面部分
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-04-06
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/04/06/Adventure/">
-        <h1 class="post-title archive">
-            Adventure in Nice
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-04-06
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/03/31/Mysql/">
-        <h1 class="post-title archive">
-            Mysql学习感悟-1
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-03-31
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/03/31/tataufo/">
-        <h1 class="post-title archive">
-            TataUfo体验报告
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-03-31
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/03/31/Baner/">
-        <h1 class="post-title archive">
-            Baner
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-03-31
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/03/29/NetMeIn/">
-        <h1 class="post-title archive">
-            待续-NetMeIn服务设计
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-03-29
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/03/29/GETFIT-CLUB/">
-        <h1 class="post-title archive">
-            Redesign for GetFit Club
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-03-29
-    </p>
-</div>
-            
-            <div class="archive-before-pagination"></div>
-            <ul class="pager">
-    
-    
-        <li class="next"><a href="/archives/page/2/">Vorherige Seite  &rarr;</a></li>
-    
-</ul>
         </div>
     </div>
-</div>
-
+</article>
 
     <!-- Footer -->
     <hr />
