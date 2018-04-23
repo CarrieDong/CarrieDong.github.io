@@ -20,7 +20,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="This is Carrie"/>
+        <meta property="og:title" content="AR入门学习-1"/>
     
 
     <!--Open Graph Description-->
@@ -33,7 +33,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
     
 
     <!--Page Cover-->
@@ -44,7 +44,7 @@
 
     <!-- Title -->
     
-    <title>page - Archiv: 2018 - This is Carrie</title>
+    <title>AR入门学习-1 - This is Carrie</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -146,90 +146,83 @@
 </nav>
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
 <header class="intro-header" style="background-image: url('/img/home.png')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>2018</h1>
+                <div class="post-heading">
+                    <h1>AR入门学习-1</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2018-04-23
+                        
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/AR/">#AR</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                        
+
+<a href="/categories/Notes/">Notes</a>
+
+                    
+                </div>
             
-                <div class="post-preview">
-    <a href="/2018/03/29/GETFIT-CLUB/">
-        <h1 class="post-title archive">
-            Redesign for GetFit Club
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-03-29
-    </p>
-</div>
+
+            <!-- Gallery -->
             
-                <div class="post-preview">
-    <a href="/2018/03/28/hi/">
-        <h1 class="post-title archive">
-            ISKO环保创新战略
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-03-28
-    </p>
-</div>
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>两天前已经尝试过学做个AR的小实现，可惜走错了路。在知乎上看到有人先是解释用Unity+Vuforia做，然后又说那样算过时了，应该用ARkit/ARcore。于是一开始我打算用ARkit，结果害我白白浪费了一个晚上装Xcode，苦逼发现支持的要么是iPhone7之后或者iPad pro，可惜我两个都不是。而ARcore只能支持三星的最新款机型，大华为也是没戏，所以计划暂时搁浅了一周。</p>
+<p>今晚又重拾了起来，还是回归到当前主流Unity+Vuforia。<br>首先安装的时候被感动到了，选择非商用和低于10万美元的年薪后就可以免费了。然后就是常规的跟着<a href="https://www.jianshu.com/p/887ba4fb5f96" target="_blank" rel="noopener">教程</a>走，很感谢写这个的大神。<br>当皮卡丘真的出现在我的卡片上之后，真的很开心啊，这种成就感比学单片机/processing什么的来的更直接，酷儿～<br><img src="1.png" alt=""></p>
+<p>正当我以为第一个教程可以成功告终，准备导出apk时，挫折噼里啪啦地砸过来了。<br>1.教程中以Xcode跑真机为导出方式到手机上，而我刚把以为没用了的Xcode卸载了。。。装一次起码要半小时啊！所以我果断开始自己查资料导安卓（也许花了这半小时可以省去更多麻烦）</p>
+<p>2.之所以说还不如花那半小时装Xcode是因为导安卓要装Android SDK和JAVA JDK，which没有被大部分的教程解释到，靠我自己花了一两个小时才从其他教程中猜出来。很倒霉的是我用iMac，我找到的教程多是win，所以文件夹之类只能自己凭感觉选。另外SDK默认的地址在Unity中打不开，我只能重新换文件夹加载一遍。可是装完再尝试导出还是会提示找不到正确地址。。。真的是很无语了，Unity中的地址就是AndroidStudio的地址啊！！！你非说不对，我能有什么办法？！再尝试换个地址重装几次，结果依然没任何改变。。。到底什么原因！！！<br><img src="2.png" alt=""></p>
+<p>今晚大概只能这样吧，明天还有课。既然安卓不成，下次再试试导iOS。如果还是不行，我就只在Unity上试试得了。毕竟我的目的很简单，了解下大概的操作思路足矣。</p>
+<p>就这样，以上！</p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
             
-                <div class="post-preview">
-    <a href="/2018/03/27/post-self/">
-        <h1 class="post-title archive">
-            WHO IS Carrie ???
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-03-27
-    </p>
-</div>
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
             
-                <div class="post-preview">
-    <a href="/2018/03/25/hello-world/">
-        <h1 class="post-title archive">
-            Hello World
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-03-25
-    </p>
-</div>
-            
-            <div class="archive-before-pagination"></div>
-            <ul class="pager">
-    
-        <li class="previous"><a href="/archives/2018/">&larr;  Nächste Seite</a></li>
-    
-    
-</ul>
         </div>
     </div>
-</div>
-
+</article>
 
     <!-- Footer -->
     <hr />
